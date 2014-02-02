@@ -1,2 +1,49 @@
 body
-  background-color: green
+  background-color: #222
+  color: #aaa
+
+.moon
+  position: fixed
+  left: 50%
+  top: -200px
+  margin-left: 200px
+
+section
+  padding: 100px 0
+
+  text-align: center
+
+  &, h1, h2, h3, h4, h5
+    color: #ccc
+    text-align: center
+  a
+    color: white
+
+section.header
+  padding: 0
+  background-image: url(/images/mountains.png), linear-gradient(200deg, #2f3970, #4f91c5, #a49cc8, #f1eab1)
+  height: 600px
+
+
+  ul
+    @extend .no-list
+    @extend .inline
+    li
+      a
+        font-size: 1.5em
+        margin-right: 30px
+        font-weight: 200
+
+section.wedding-party
+  ul
+    @extend .no-list
+
+.no-list
+  list-style: none
+  margin: 0
+  li
+    margin: 0
+
+.inline
+  li
+    display: inline

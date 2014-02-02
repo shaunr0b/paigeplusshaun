@@ -1,2 +1,36 @@
 body {
-  background-color: green; }
+  background-color: #222222;
+  color: #aaaaaa; }
+
+.moon {
+  position: fixed;
+  left: 50%;
+  top: -200px;
+  margin-left: 200px; }
+
+section {
+  padding: 100px 0;
+  text-align: center; }
+  section, section h1, section h2, section h3, section h4, section h5 {
+    color: #cccccc;
+    text-align: center; }
+  section a {
+    color: white; }
+
+section.header {
+  padding: 0;
+  background-image: url(/images/mountains.png), linear-gradient(200deg, #2f3970, #4f91c5, #a49cc8, #f1eab1);
+  height: 600px; }
+  section.header ul li a {
+    font-size: 1.5em;
+    margin-right: 30px;
+    font-weight: 200; }
+
+.no-list, section.header ul, section.wedding-party ul {
+  list-style: none;
+  margin: 0; }
+  .no-list li, section.header ul li, section.wedding-party ul li {
+    margin: 0; }
+
+.inline li, section.header ul li {
+  display: inline; }

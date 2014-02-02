@@ -1,0 +1,4 @@
+s = skrollr.init()
+
+$ ->
+  $.localScroll()
