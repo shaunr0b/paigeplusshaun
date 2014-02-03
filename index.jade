@@ -8,7 +8,7 @@ head
     //if IE
       script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
   body
-    .moon(data-0="top: -300px", data-3000="top: 0px", data-4000="top: 200px")
+    .moon(data-0="top: -300px", data-1600="top: 0px", data-2000="top: 0px")
       img(src='images/moon.png')
 
     include templates/header
@@ -19,9 +19,14 @@ head
     include templates/bigday
     include templates/rsvp
 
+    .starry-night
+      img(src='images/stars.png')
+
+
     script(src='http://code.jquery.com/jquery-1.10.1.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.9/jquery.scrollTo.min.js')
     script(src='//cdn.jsdelivr.net/jquery.localscroll/1.3.1/jquery.localScroll.min.js')
+    script(src='//cdn.jsdelivr.net/jquery.waypoints/2.0.2/waypoints.min.js')
 
     script(src='js/app.js')

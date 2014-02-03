@@ -5,7 +5,18 @@
   s = skrollr.init();
 
   $(function() {
-    return $.localScroll();
+    var $mainNav, $mainNavWrapper;
+
+    $.localScroll();
+    $mainNavWrapper = $('#main-nav-wrapper');
+    $mainNav = $('#main-nav');
+    return $mainNavWrapper.waypoint(function(direction) {
+      if (direction === 'down') {
+        return $mainNav.addClass('sticky');
+      } else {
+        return $mainNav.removeClass('sticky');
+      }
+    });
   });
 
 }).call(this);

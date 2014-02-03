@@ -8,6 +8,29 @@ body {
   top: -200px;
   margin-left: 200px; }
 
+.starry-night {
+  background-color: #11163e; }
+
+.full-width {
+  width: 100%; }
+
+#main-nav {
+  z-index: 100; }
+  #main-nav .title {
+    display: none; }
+  #main-nav.sticky {
+    position: fixed;
+    top: 0;
+    background-color: black;
+    left: 0;
+    width: 100%;
+    color: black;
+    font-size: 0.8em; }
+    #main-nav.sticky .title {
+      display: inline; }
+      #main-nav.sticky .title a {
+        color: #aaaaaa; }
+
 section {
   padding: 100px 0;
   text-align: center; }
