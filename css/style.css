@@ -64,7 +64,8 @@ section.header {
 
 .small-centered {
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  display: inline-block; }
 
 .padded-vertical {
   padding-top: 10px;
