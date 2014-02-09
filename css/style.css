@@ -1,3 +1,9 @@
+h1, h2 {
+  color: #f9b6a3; }
+
+h3, h4 {
+  color: #e1d7ea; }
+
 body {
   background-color: #222222;
   color: #aaaaaa; }
@@ -6,7 +12,8 @@ body {
   position: fixed;
   left: 50%;
   top: -200px;
-  margin-left: 200px; }
+  margin-left: 200px;
+  z-index: 10; }
 
 .starry-night {
   background-color: #11163e; }
@@ -34,9 +41,6 @@ body {
 section {
   padding: 100px 0;
   text-align: center; }
-  section, section h1, section h2, section h3, section h4, section h5 {
-    color: #cccccc;
-    text-align: center; }
   section a {
     color: white; }
 
@@ -57,3 +61,14 @@ section.header {
 
 .inline li, section.header ul li {
   display: inline; }
+
+.small-centered {
+  text-align: center;
+  margin: 0 auto; }
+
+.padded-vertical {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.low-contrast {
+  color: #cccccc; }

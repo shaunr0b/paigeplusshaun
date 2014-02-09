@@ -1,6 +1,6 @@
 !!! 5
-html(lang='en')
-head
+html(lang='en', ng-app='PaigePlusShaun')
+  head
     meta(charset='utf-8')
     title Paige + Shaun | October 11th, 2014
     link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.3/css/foundation.min.css')
@@ -8,25 +8,138 @@ head
     //if IE
       script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
   body
-    .moon(data-0="top: -300px", data-1600="top: 0px", data-2000="top: 0px")
+    .moon(data-0='top: -300px', data-1600='top: 0px', data-2000='top: 0px')
       img(src='images/moon.png')
-
-    include templates/header
-    include templates/couple
-    include templates/weddingparty
-    include templates/venue
-    include templates/accomodations
-    include templates/bigday
-    include templates/rsvp
-
+    section#top.header
+      .row.pre-nav
+        .small-12.columns
+          h1 Paige & Shaun
+          h2
+            | October 11
+            sup th
+            | , 2014
+      #main-nav-wrapper
+        ul#main-nav
+          li.title
+            a(href='#top') paige + shaun
+          li
+            a(href='#couple') us
+          li
+            a(href='#wedding-party') our peoples
+          li
+            a(href='#venue') the venue
+          li
+            a(href='#accomodations') the accomodations
+          li
+            a(href='#big-day') the big day
+          li
+            a(href='#rsvp') rsvp
+    section#couple.couple
+      .row
+        h1 Us
+      .row
+        .small-6.columns
+          img(src='images/eng/jump-sepia.jpg')
+        .small-6.columns
+          img(src='images/eng/neck-kissy.jpg')
+    section#wedding-party.wedding-party(ng-controller='WeddingPartyCtrl')
+      .row
+        .small-6.columns.small-centered
+          h1 the wedding party
+          h4
+            | our love has grown, supported by
+            br
+            | the wisdom and love of our friends
+      .row
+        .small-3.columns
+          ul
+            li(ng-repeat='groomsman in groomsmen')
+              a(href='javascript:;', ng-click='activate(groomsman)') {{groomsman.name}}
+        .small-6.columns
+          img(ng-if='activeImage', ng-attr-src='{{activeImage}}')
+          h4(ng-if='activeNickname') {{activeNickname}}
+          {{activeImage}}
+        .small-3.columns
+          ul
+            li(ng-repeat='bridesMaid in bridesMaids')
+              a(href='javascript:;', ng-click='activate(bridesMaid)') {{bridesMaid.name}}
+    section#venue.venue
+      .row
+        h1 Venue
+      .row
+        .large-3.columns
+          img(src='http://www.innatwestwoodfarm.com/images/Inn-Springtime.jpg')
+        .large-9.columns
+          p
+            | Tucked right at the foothills of the Blue Ridge Mountains,
+            | Shaun and Paige instantly fell in love with the charm and
+            | relaxed feel of the
+            a(href='http://www.innatwestwoodfarm.com/') Inn at Westwood Farm, in Orange, Virginia.
+          p
+            | Built in 1910 as a functioning farm, the venue hosts a beautiful barn, paddock with horses and llama, chicken coop and a farmhouse. Shaun and Paige plan to be married outdoors in a serene, intimate clearing near the surrounding woods, with a tented reception to follow on the property.
+    section#accomodations.accomodations
+      .row
+        h1 The Accomodations
+      .row
+        .large-4.columns
+          h3 Best Western, Culpepper
+          address
+            | 791 Madison Rd
+            br
+            | Culpeper, VA 22701
+          br
+          ul.inline-list.small-centered.padded-vertical
+            li
+              a(href='http://www.hotelsavings.com/booking/1063646?showdate=true') Book Now
+            li
+              a(href='https://www.google.com/maps/preview/dir//Best+Western+Culpeper+Inn,+791+Madison+Rd,+Culpeper,+VA+22701/@38.470614,-78.0002395,10z/data=!4m12!1m3!3m2!1s0x0:0x43cc1121f5abe765!2sBest+Western+Culpeper+Inn!4m7!1m0!1m5!1m1!1s0x89b424000fba4d6d:0x43cc1121f5abe765!2m2!1d-78.020275!2d38.455275') Directions
+            li
+              a(href='https://www.google.com/url?sa=t&rct=j&source=maps&url=http%3A%2F%2Fbook.bestwestern.com%2Fbestwestern%2FproductInfo.do%3FpropertyCode%3D47127%26cm_mmc%3DPTI-_-local-_-feed-_-47127&ei=Bxb3Uv7CCYjTsATPzAE&cd=1&usg=AFQjCNG0xBiI6J7T7A4reo7BBL5DEMSrYg&ved=0CBAQ8xooCjAA') Website
+          p
+            | $89.99 / night for queen
+            | $99.00 / night for king or 2 queens
+            | book under ‘dearing-robinson’
+          img(src='images/star.png')
+          img(src='images/star.png')
+          img(src='images/star.png')
+        .large-4.columns
+          h4  Holiday In Express, Culpepper
+          p
+            | $89.99 / night for queen
+            | $99.00 / night for king or 2 queens
+            | book under ‘dearing-robinson’
+          img(src='images/star.png')
+          img(src='images/star.png')
+          img(src='images/star.png')
+          img(src='images/star.png')
+        .large-4.columns
+          h4 Area Bed & Breakfasts
+          p
+            | $89.99 / night for queen
+            | $99.00 / night for king or 2 queens
+            | book under ‘dearing-robinson’
+          img(src='images/star.png')
+          img(src='images/star.png')
+          img(src='images/star.png')
+          img(src='images/star.png')
+          img(src='images/star.png')
+    section#big-day.big-day
+      .row
+        h1 The Big Day
+      .row
+        .small-12.columns
+    section#rsvp.rsvp
+      .row
+        h1 RSVP
+      .row
+        .small-12.columns
     .starry-night
       img(src='images/stars.png')
-
-
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js')
     script(src='http://code.jquery.com/jquery-1.10.1.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.11/skrollr.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.9/jquery.scrollTo.min.js')
     script(src='//cdn.jsdelivr.net/jquery.localscroll/1.3.1/jquery.localScroll.min.js')
     script(src='//cdn.jsdelivr.net/jquery.waypoints/2.0.2/waypoints.min.js')
-
     script(src='js/app.js')

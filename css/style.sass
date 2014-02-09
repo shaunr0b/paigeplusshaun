@@ -1,3 +1,13 @@
+$beige: #f9b6a3
+$light-purple: #e1d7ea
+$deep-purple: #3a1e49
+
+h1, h2
+  color: $beige
+
+h3, h4
+  color: $light-purple
+
 body
   background-color: #222
   color: #aaa
@@ -7,6 +17,7 @@ body
   left: 50%
   top: -200px
   margin-left: 200px
+  z-index: 10
 
 .starry-night
   background-color: #11163e
@@ -36,9 +47,6 @@ section
 
   text-align: center
 
-  &, h1, h2, h3, h4, h5
-    color: #ccc
-    text-align: center
   a
     color: white
 
@@ -70,3 +78,17 @@ section.wedding-party
 .inline
   li
     display: inline
+
+.small-centered
+  text-align: center
+  margin: 0 auto
+
+.padded-vertical
+  padding:
+    top: 10px
+    bottom: 10px
+
+.low-contrast
+  color: #ccc
+
+

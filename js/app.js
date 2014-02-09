@@ -19,4 +19,93 @@
     });
   });
 
+  angular.module('PaigePlusShaun', []).controller('WeddingPartyCtrl', [
+    '$scope', function($scope) {
+      var addImageUrlPrefix, bridesMaids, bridesMaidsImagePath, groomsmanImagePath, groomsmen;
+
+      bridesMaids = [
+        {
+          name: "Chelsea",
+          image: 'chelsea.jpg',
+          nickname: 'chi chi'
+        }, {
+          name: "Linley",
+          image: 'lineley.jpg',
+          nickname: 'Left-hand Woman In (Solving) Crime'
+        }, {
+          name: "Abby",
+          image: 'abby.png',
+          nickname: 'Nike'
+        }, {
+          name: "Alex",
+          image: 'alex.png',
+          nickname: 'Trash-talker'
+        }, {
+          name: "Emma",
+          image: 'emma.jpg',
+          nickname: 'The Snuggler'
+        }, {
+          name: "Jessica",
+          image: 'jesspaige.png',
+          nickname: 'Mama Dolittle'
+        }, {
+          name: "Katie",
+          image: 'katie.png',
+          nickname: 'Orangina'
+        }
+      ];
+      groomsmen = [
+        {
+          name: "Maitreya",
+          image: 'maitreya.png',
+          nickname: 'Rock Jock'
+        }, {
+          name: "Rafael",
+          image: 'rafael.png',
+          nickname: 'Herbalist'
+        }, {
+          name: "Aaron",
+          image: 'aaron.png',
+          nickname: 'Macgyver'
+        }, {
+          name: "Bill",
+          image: 'bill.jpg',
+          nickname: 'Andy Warhol'
+        }, {
+          name: "Dave",
+          image: 'dave.png',
+          nickname: 'The Doctor of Cool'
+        }, {
+          name: "Evan",
+          image: 'judah.png',
+          nickname: 'Battle Star Judactica'
+        }, {
+          name: "Connolly",
+          image: 'connolly.png',
+          nickname: 'Mountain Man'
+        }
+      ];
+      groomsmanImagePath = '/images/groomsmen/';
+      bridesMaidsImagePath = '/images/bridesmaids/';
+      $scope.bridesMaids = _.map(bridesMaids, function(bridesMaid) {
+        return "" + bridesMaidsImagePath + bridesMaid;
+      });
+      addImageUrlPrefix = function(collection, imageUrlPrefix) {
+        return _.map(collection, function(item) {
+          return {
+            name: item.name,
+            nickname: item.nickname,
+            image: imageUrlPrefix + item.image
+          };
+        });
+      };
+      $scope.groomsmen = addImageUrlPrefix(groomsmen, groomsmanImagePath);
+      $scope.bridesMaids = addImageUrlPrefix(bridesMaids, bridesMaidsImagePath);
+      return $scope.activate = function(person) {
+        $scope.activeImage = person.image;
+        return $scope.activeNickname = person.nickname;
+      };
+    }
+  ]);
+
 }).call(this);
