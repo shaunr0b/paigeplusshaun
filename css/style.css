@@ -104,3 +104,7 @@ section h1, section h2, section h3, section h4, section h5 {
 
 .center {
   text-align: center; }
+
+section:not(#top):not(#couple) {
+  padding-top: 150px;
+  background: url(../images/divider-80.png) top center no-repeat !important; }
