@@ -50,7 +50,7 @@
           nickname: 'Mama Dolittle'
         }, {
           name: "Katie",
-          image: 'katie.png',
+          image: 'katie.jpg',
           nickname: 'Orangina'
         }
       ];
@@ -103,7 +103,9 @@
       $scope.bridesMaids = addImageUrlPrefix(bridesMaids, bridesMaidsImagePath);
       return $scope.activate = function(person) {
         $scope.activeImage = person.image;
-        return $scope.activeNickname = person.nickname;
+        $scope.activeNickname = person.nickname;
+        $scope.activeName = person.name;
+        return $scope.activePerson = person;
       };
     }
   ]);

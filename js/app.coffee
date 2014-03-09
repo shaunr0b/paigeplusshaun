@@ -28,7 +28,7 @@ angular.module('PaigePlusShaun', [])
       { name: "Alex",    image: 'alex.png', nickname: 'Trash-talker'}
       { name: "Emma",    image: 'emma.jpg', nickname: 'The Snuggler'}
       { name: "Jessica", image: 'jesspaige.png', nickname: 'Mama Dolittle'}
-      { name: "Katie",   image: 'katie.png', nickname: 'Orangina'}
+      { name: "Katie",   image: 'katie.jpg', nickname: 'Orangina'}
     ]
     groomsmen = [
       { name: "Maitreya",  image: 'maitreya.png',  nickname: 'Rock Jock'}
@@ -59,5 +59,7 @@ angular.module('PaigePlusShaun', [])
     $scope.activate = (person)->
       $scope.activeImage = person.image
       $scope.activeNickname = person.nickname
+      $scope.activeName = person.name
+      $scope.activePerson = person
 
   ]

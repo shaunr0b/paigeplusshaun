@@ -2,15 +2,21 @@ $beige: #f9b6a3
 $light-purple: #e1d7ea
 $deep-purple: #3a1e49
 
+
+body
+  background-color: #222
+  color: #aaa
+
+
+body, h1, h2, h3, h4, h5
+  font-family: "Palatino"
+
 h1, h2
   color: $beige
 
 h3, h4
   color: $light-purple
 
-body
-  background-color: #222
-  color: #aaa
 
 .moon
   position: fixed
@@ -24,6 +30,9 @@ body
 
 .full-width
   width: 100%
+
+#main-nav-wrapper
+  margin-top: 30px
 
 #main-nav
   z-index: 100
@@ -95,3 +104,26 @@ section.wedding-party
 .beige
   color: #ddd
 
+.big-day
+  table, table td, table tr
+    background-color: transparent
+    color: white
+    border: 0
+    margin: 0 auto
+    font-size: 1.2em
+
+section
+  h1, h2, h3, h4, h5
+    color: white
+
+.wedding-party
+  ul li a
+    font-size: 1.3em
+    color: #ccc
+    &.active
+      color: white
+
+.large
+  font-size: 1.2em
+.center
+  text-align: center

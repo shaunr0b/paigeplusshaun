@@ -1,12 +1,15 @@
+body {
+  background-color: #222222;
+  color: #aaaaaa; }
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "Palatino"; }
+
 h1, h2 {
   color: #f9b6a3; }
 
 h3, h4 {
   color: #e1d7ea; }
-
-body {
-  background-color: #222222;
-  color: #aaaaaa; }
 
 .moon {
   position: fixed;
@@ -20,6 +23,9 @@ body {
 
 .full-width {
   width: 100%; }
+
+#main-nav-wrapper {
+  margin-top: 30px; }
 
 #main-nav {
   z-index: 100; }
@@ -76,3 +82,25 @@ section.header {
 
 .beige {
   color: #dddddd; }
+
+.big-day table, .big-day table td, .big-day table tr {
+  background-color: transparent;
+  color: white;
+  border: 0;
+  margin: 0 auto;
+  font-size: 1.2em; }
+
+section h1, section h2, section h3, section h4, section h5 {
+  color: white; }
+
+.wedding-party ul li a {
+  font-size: 1.3em;
+  color: #cccccc; }
+  .wedding-party ul li a.active {
+    color: white; }
+
+.large {
+  font-size: 1.2em; }
+
+.center {
+  text-align: center; }

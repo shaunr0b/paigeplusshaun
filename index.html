@@ -8,23 +8,23 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   </head>
   <body>
-    <div data-0="top: -300px" data-1600="top: 0px" data-2000="top: 0px" class="moon"><img src="images/moon.png"></div>
+    <div data-0="top: -300px" data-1700="top: -300px" data-2500="top: 0px" class="moon"><img src="images/moon.png"></div>
     <section id="top" class="header">
       <div class="row pre-nav">
         <div class="small-12 columns">
-          <h1>Paige & Shaun</h1>
-          <h2>October 11<sup>th</sup>, 2014</h2>
+          <br/>
+          <br/><img src="images/masthead.png">
         </div>
       </div>
       <div id="main-nav-wrapper">
         <ul id="main-nav">
           <li class="title"><a href="#top">paige + shaun</a></li>
           <li><a href="#couple">us</a></li>
-          <li><a href="#wedding-party">our peoples</a></li>
-          <li><a href="#venue">the venue</a></li>
-          <li><a href="#accomodations">the accomodations</a></li>
+          <li><a href="#wedding-party">wedding party</a></li>
+          <li><a href="#venue">venue</a></li>
+          <li><a href="#accomodations">accomodations</a></li>
           <li><a href="#big-day">the big day</a></li>
-          <li><a href="#rsvp">rsvp</a></li>
+          <li><a href="#registry">registry</a></li>
         </ul>
       </div>
     </section>
@@ -41,21 +41,21 @@
       <div class="row">
         <div class="small-6 columns small-centered">
           <h1>the wedding party</h1>
-          <h4>our love has grown, supported by<br>the wisdom and love of our friends</h4>
+          <h4>our love has grown strong with the<br>wisdom and support of our friends</h4>
         </div>
       </div>
       <div class="row">
         <div class="small-3 columns">
           <ul>
-            <li ng-repeat="groomsman in groomsmen"><a href="javascript:;" ng-click="activate(groomsman)">{{groomsman.name}}</a></li>
+            <li ng-repeat="groomsman in groomsmen"><a href="javascript:;" ng-click="activate(groomsman)" ng-class="{active: activePerson == groomsman}">{{groomsman.name}}</a></li>
           </ul>
         </div>
-        <div class="small-6 columns"><img ng-if="activeImage" ng-attr-src="{{activeImage}}">
-          <h4 ng-if="activeNickname">{{activeNickname}}</h4>{{activeImage}}
+        <div class="small-6 columns">
+          <h4 ng-if="activeNickname">{{activeName}} ({{activeNickname}})</h4><img ng-if="activeImage" ng-attr-src="{{activeImage}}">
         </div>
         <div class="small-3 columns">
           <ul>
-            <li ng-repeat="bridesMaid in bridesMaids"><a href="javascript:;" ng-click="activate(bridesMaid)">{{bridesMaid.name}}</a></li>
+            <li ng-repeat="bridesMaid in bridesMaids"><a href="javascript:;" ng-click="activate(bridesMaid)" ng-class="{active: activePerson == bridesMaid}">{{bridesMaid.name}}</a></li>
           </ul>
         </div>
       </div>
@@ -67,16 +67,19 @@
       <div class="row">
         <div class="large-3 columns"><img src="http://www.innatwestwoodfarm.com/images/Inn-Springtime.jpg"></div>
         <div class="large-9 columns">
-          <p>
-            Tucked right at the foothills of the Blue Ridge Mountains,
-            Shaun and Paige instantly fell in love with the charm and
-            relaxed feel of the  Inn at Westwood Farm, in Orange, Virginia.
-            <ul class="inline-list small-centered">
+          <p class="large">
+            We instantly fell in love with the charm and
+            relaxed feel of the Inn at Westwood Farm, in Orange, Virginia.
+            <ul class="inline-list small-centered large">
               <li><a href="http://www.innatwestwoodfarm.com/">Website</a></li>
               <li><a href="https://www.google.com/maps/preview/place/Inn+At+Westwood+Farm/@38.2375592,-78.1597811,17z/data=!3m1!4b1!4m2!3m1!1s0x89b411cba4dfbbd9:0x18ca0aa5a3c06fda">Map & Directions</a></li>
             </ul>
           </p>
-          <p>Built in 1910 as a functioning farm, the venue hosts a beautiful barn, paddock with horses and llama, chicken coop and a farmhouse. Shaun and Paige plan to be married outdoors in a serene, intimate clearing near the surrounding woods, with a tented reception to follow on the property.</p>
+          <p class="large">
+            Our wedding ceremony will be held
+            outdoors, with a tented reception to
+            follow.
+          </p>
         </div>
       </div>
     </section>
@@ -93,11 +96,16 @@
             <li><a href="https://www.google.com/maps/preview/dir//Best+Western+Culpeper+Inn,+791+Madison+Rd,+Culpeper,+VA+22701/@38.470614,-78.0002395,10z/data=!4m12!1m3!3m2!1s0x0:0x43cc1121f5abe765!2sBest+Western+Culpeper+Inn!4m7!1m0!1m5!1m1!1s0x89b424000fba4d6d:0x43cc1121f5abe765!2m2!1d-78.020275!2d38.455275">Directions</a></li>
             <li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;source=maps&amp;url=http%3A%2F%2Fbook.bestwestern.com%2Fbestwestern%2FproductInfo.do%3FpropertyCode%3D47127%26cm_mmc%3DPTI-_-local-_-feed-_-47127&amp;ei=Bxb3Uv7CCYjTsATPzAE&amp;cd=1&amp;usg=AFQjCNG0xBiI6J7T7A4reo7BBL5DEMSrYg&amp;ved=0CBAQ8xooCjAA">Website</a></li>
           </ul>
-          <p class="beige">Shuttle: Leaving hotel at 4:00& 4:40pm<br>returning to hotel 10:00pm & 10:40pm</p>
+          <p class="beige">
+            <h5>Shuttle</h5>
+            <div>leaves hotel at<br><strong>3:50 & 4:30pm</strong></div>
+            <div>returning to hotel<br><strong>9:00 & 9:40 & 10:20 & 11:00pm</strong></div>
+          </p>
           <p>
-            $89.99 / night for queen
-            $99.00 / night for king or 2 queens
-            book under ‘dearing-robinson’
+            <h5>Cost</h5>
+            <div>$89.99 / night for queen</div>
+            <div>$99.00 / night for king or 2 queens</div>
+            <div>book under ‘dearing-robinson’</div>
           </p>
         </div>
         <div class="medium-4 columns"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png">
@@ -108,10 +116,16 @@
             <li><a href="http://www.ihg.com/holidayinnexpress/hotels/us/en/culpeper/cupes/hoteldetail/directions">Directions</a></li>
             <li><a href="http://www.ihg.com/holidayinnexpress/hotels/us/en/culpeper/cupes/hoteldetail">Website</a></li>
           </ul>
-          <p class="beige">Shuttle: Leaving hotel at 4:00& 4:40pm<br>returning to hotel 10:00pm & 10:40pm</p>
+          <p class="beige">
+            <h5>Shuttle</h5>
+            <div>leaves from neighboring<br>Best Western hotel at<br><strong>3:50 & 4:30pm</strong></div>
+            <div>returns to Best Western hotel<br><strong>9:00 & 9:40 & 10:20 & 11:00pm</strong></div>
+          </p>
           <p>
-            $149.99 / night for queen
-            $159.00 / night for king or 2 queens
+            <h5>Cost</h5>
+            <div>149.99 / night for queen</div>
+            <div>$159.00 / night for king or 2 queens</div>
+            <div>* No room block: subject to availability.</div>
           </p>
         </div>
         <div class="medium-4 columns"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png">
@@ -122,18 +136,39 @@
             Some of our favorite sites are here
           </address>
           <ul style="text-align: center" class="inline-list small-centered padded-vertical">
-            <li><a href="http://www.homeaway.com/vacation-rentals/virginia/shenandoah-valley/r6102">Home Away</a></li>
-            <li><a href="http://www.shenandoahvalleyweb.com/accom6.html">Shenandoah Vly. Club</a></li>
+            <li><a target="_blank" href="http://www.homeaway.com/vacation-rentals/virginia/shenandoah-valley/r6102">Home Away</a></li>
+            <li><a target="_blank" href="http://www.shenandoahvalleyweb.com/accom6.html">Shenandoah Vly. Club</a></li>
+            <li><a target="_blank" href="https://www.google.com/search?q=orange%20virginia%20bed%20breakfasts">Google</a></li>
           </ul>
         </div>
-        <p class="beige">Shuttle: Leaving hotel at 4:00& 4:40pm<br>returning to hotel 10:00pm & 10:40pm
-          <p>$200 and up / night</p>
+        <p class="beige">
+          <h5>Transportation</h5>Shuttle service will be provided from the Best Western and Holiday Inn in Culpepper. If choosing your own B&B or Cabin, please plan to provide your own transportation. Parking is availble on site at the <a href="#venue">venue</a>.
         </p>
+        <h5>Cost</h5>
+        <p>$200 and up / night</p>
       </div>
     </section>
     <section id="big-day" class="big-day">
       <div class="row">
         <h1>The Big Day</h1>
+        <table>
+          <tr>
+            <td>4:00</td>
+            <td>Guests Arrive</td>
+          </tr>
+          <tr>
+            <td>5:00</td>
+            <td>Ceremony</td>
+          </tr>
+          <tr>
+            <td>5:30</td>
+            <td>Cocktails</td>
+          </tr>
+          <tr>
+            <td>6:30</td>
+            <td>Reception</td>
+          </tr>
+        </table>
       </div>
       <div class="row">
         <div class="small-12 columns"></div>
@@ -141,13 +176,18 @@
     </section>
     <section id="rsvp" class="rsvp">
       <div class="row">
-        <h1>RSVP</h1>
+        <h1>Registry</h1>
+        <p>Coming soon!</p>
       </div>
       <div class="row">
         <div class="small-12 columns"></div>
       </div>
     </section>
-    <div class="starry-night"><img src="images/stars.png"></div>
+    <div style="background-image: url(images/stars.png); height: 800px; background-size: cover" class="starry-night">
+      <div class="row"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><img src="images/mastfoot.png"><br><br>
+        <h3 class="center">#psiloveyou1011</h3>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>

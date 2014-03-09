@@ -8,16 +8,16 @@ html(lang='en', ng-app='PaigePlusShaun')
     //if IE
       script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
   body
-    .moon(data-0='top: -300px', data-1600='top: 0px', data-2000='top: 0px')
+    .moon(data-0='top: -300px', data-1700='top: -300px', data-2500='top: 0px')
       img(src='images/moon.png')
     section#top.header
       .row.pre-nav
         .small-12.columns
-          h1 Paige & Shaun
-          h2
-            | October 11
-            sup th
-            | , 2014
+          <br/>
+          <br/>
+
+          img(src="images/masthead.png")
+
       #main-nav-wrapper
         ul#main-nav
           li.title
@@ -25,15 +25,16 @@ html(lang='en', ng-app='PaigePlusShaun')
           li
             a(href='#couple') us
           li
-            a(href='#wedding-party') our peoples
+            a(href='#wedding-party') wedding party
           li
-            a(href='#venue') the venue
+            a(href='#venue') venue
           li
-            a(href='#accomodations') the accomodations
+            a(href='#accomodations') accomodations
           li
             a(href='#big-day') the big day
           li
-            a(href='#rsvp') rsvp
+            a(href='#registry') registry
+
     section#couple.couple
       .row
         h1 Us
@@ -47,22 +48,22 @@ html(lang='en', ng-app='PaigePlusShaun')
         .small-6.columns.small-centered
           h1 the wedding party
           h4
-            | our love has grown, supported by
+            | our love has grown strong with the
             br
-            | the wisdom and love of our friends
+            | wisdom and support of our friends
       .row
         .small-3.columns
           ul
             li(ng-repeat='groomsman in groomsmen')
-              a(href='javascript:;', ng-click='activate(groomsman)') {{groomsman.name}}
+              a(href='javascript:;', ng-click='activate(groomsman)',  ng-class="{active: activePerson == groomsman}") {{groomsman.name}}
         .small-6.columns
+          h4(ng-if='activeNickname') {{activeName}} ({{activeNickname}})
+
           img(ng-if='activeImage', ng-attr-src='{{activeImage}}')
-          h4(ng-if='activeNickname') {{activeNickname}}
-          {{activeImage}}
         .small-3.columns
           ul
             li(ng-repeat='bridesMaid in bridesMaids')
-              a(href='javascript:;', ng-click='activate(bridesMaid)') {{bridesMaid.name}}
+              a(href='javascript:;', ng-click='activate(bridesMaid)', ng-class="{active: activePerson == bridesMaid}") {{bridesMaid.name}}
     section#venue.venue
       .row
         h1 Venue
@@ -70,19 +71,21 @@ html(lang='en', ng-app='PaigePlusShaun')
         .large-3.columns
           img(src='http://www.innatwestwoodfarm.com/images/Inn-Springtime.jpg')
         .large-9.columns
-          p
-            | Tucked right at the foothills of the Blue Ridge Mountains,
-            | Shaun and Paige instantly fell in love with the charm and
-            | relaxed feel of the  Inn at Westwood Farm, in Orange, Virginia.
-            ul.inline-list.small-centered
+          p.large
+            | We instantly fell in love with the charm and
+            | relaxed feel of the Inn at Westwood Farm, in Orange, Virginia.
+            ul.inline-list.small-centered.large
               li
                 a(href='http://www.innatwestwoodfarm.com/')
                   | Website
               li
                 a(href='https://www.google.com/maps/preview/place/Inn+At+Westwood+Farm/@38.2375592,-78.1597811,17z/data=!3m1!4b1!4m2!3m1!1s0x89b411cba4dfbbd9:0x18ca0aa5a3c06fda')
                   | Map & Directions
-          p
-            | Built in 1910 as a functioning farm, the venue hosts a beautiful barn, paddock with horses and llama, chicken coop and a farmhouse. Shaun and Paige plan to be married outdoors in a serene, intimate clearing near the surrounding woods, with a tented reception to follow on the property.
+          p.large
+            | Our wedding ceremony will be held
+            | outdoors, with a tented reception to
+            | follow.
+
     section#accomodations.accomodations
       .row
         h1 The Accomodations
@@ -108,13 +111,21 @@ html(lang='en', ng-app='PaigePlusShaun')
             li
               a(href='https://www.google.com/url?sa=t&rct=j&source=maps&url=http%3A%2F%2Fbook.bestwestern.com%2Fbestwestern%2FproductInfo.do%3FpropertyCode%3D47127%26cm_mmc%3DPTI-_-local-_-feed-_-47127&ei=Bxb3Uv7CCYjTsATPzAE&cd=1&usg=AFQjCNG0xBiI6J7T7A4reo7BBL5DEMSrYg&ved=0CBAQ8xooCjAA') Website
           p.beige
-            | Shuttle: Leaving hotel at 4:00& 4:40pm
-            br
-            | returning to hotel 10:00pm & 10:40pm
+            h5 Shuttle
+            div
+              | leaves hotel at
+              br
+              strong 3:50 & 4:30pm
+            div
+              | returning to hotel
+              br
+              strong 9:00 & 9:40 & 10:20 & 11:00pm
           p
-            | $89.99 / night for queen
-            | $99.00 / night for king or 2 queens
-            | book under ‘dearing-robinson’
+            h5 Cost
+
+            div $89.99 / night for queen
+            div $99.00 / night for king or 2 queens
+            div book under ‘dearing-robinson’
 
         .medium-4.columns
           img(src='images/star.png')
@@ -142,15 +153,24 @@ html(lang='en', ng-app='PaigePlusShaun')
               a(href='http://www.ihg.com/holidayinnexpress/hotels/us/en/culpeper/cupes/hoteldetail') Website
 
           p.beige
-            | Shuttle: Leaving hotel at 4:00& 4:40pm
-            br
-            | returning to hotel 10:00pm & 10:40pm
-
+            h5 Shuttle
+            div
+              | leaves from neighboring
+              br
+              | Best Western hotel at
+              br
+              strong 3:50 & 4:30pm
+            div
+              | returns to Best Western hotel
+              br
+              strong 9:00 & 9:40 & 10:20 & 11:00pm
 
           p
-            | $149.99 / night for queen
-            | $159.00 / night for king or 2 queens
+            h5 Cost
 
+            div 149.99 / night for queen
+            div $159.00 / night for king or 2 queens
+            div * No room block: subject to availability.
 
 
         .medium-4.columns
@@ -167,32 +187,70 @@ html(lang='en', ng-app='PaigePlusShaun')
 
           ul.inline-list.small-centered.padded-vertical(style='text-align: center')
             li
-              a(href='http://www.homeaway.com/vacation-rentals/virginia/shenandoah-valley/r6102') Home Away
+              a(target='_blank', href='http://www.homeaway.com/vacation-rentals/virginia/shenandoah-valley/r6102') Home Away
             li
-              a(href='http://www.shenandoahvalleyweb.com/accom6.html') Shenandoah Vly. Club
+              a(target='_blank', href='http://www.shenandoahvalleyweb.com/accom6.html') Shenandoah Vly. Club
+            li
+              a(target='_blank', href='https://www.google.com/search?q=orange%20virginia%20bed%20breakfasts') Google
 
          p.beige
-          | Shuttle: Leaving hotel at 4:00& 4:40pm
-          br
-          | returning to hotel 10:00pm & 10:40pm
+          h5 Transportation
+          | Shuttle service will be provided from the Best Western and Holiday Inn in Culpepper. If choosing your own B&B or Cabin, please plan to provide your own transportation. Parking is availble on site at the <a href="#venue">venue</a>.
 
+        h5 Cost
 
-
-          p
-            | $200 and up / night
+        p
+          | $200 and up / night
 
     section#big-day.big-day
       .row
         h1 The Big Day
+        table
+          tr
+            td 4:00
+            td Guests Arrive
+          tr
+            td 5:00
+            td Ceremony
+          tr
+            td 5:30
+            td Cocktails
+          tr
+            td 6:30
+            td Reception
+
       .row
         .small-12.columns
     section#rsvp.rsvp
       .row
-        h1 RSVP
+        h1 Registry
+
+        p Coming soon!
       .row
         .small-12.columns
-    .starry-night
-      img(src='images/stars.png')
+    .starry-night(style='background-image: url(images/stars.png); height: 800px; background-size: cover')
+      .row
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        img(src='images/mastfoot.png')
+        br
+        br
+
+        h3.center #psiloveyou1011
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js')
     script(src='http://code.jquery.com/jquery-1.10.1.min.js')
     script(src='http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js')
