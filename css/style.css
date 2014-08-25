@@ -88,8 +88,8 @@ section.header {
 .low-contrast {
   color: #cccccc; }
 
-.beige {
-  color: #dddddd; }
+.beige, .beige div {
+  color: #f9b6a3; }
 
 .big-day table, .big-day table td, .big-day table tr {
   background-color: transparent;
